@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/weatheria/static/css/main.a719056c.chunk.css",
+    "main.js": "/weatheria/static/js/main.efb0c315.chunk.js",
+    "main.js.map": "/weatheria/static/js/main.efb0c315.chunk.js.map",
+    "runtime-main.js": "/weatheria/static/js/runtime-main.09ba3b28.js",
+    "runtime-main.js.map": "/weatheria/static/js/runtime-main.09ba3b28.js.map",
+    "static/js/2.b5412abb.chunk.js": "/weatheria/static/js/2.b5412abb.chunk.js",
+    "static/js/2.b5412abb.chunk.js.map": "/weatheria/static/js/2.b5412abb.chunk.js.map",
+    "index.html": "/weatheria/index.html",
+    "static/css/main.a719056c.chunk.css.map": "/weatheria/static/css/main.a719056c.chunk.css.map",
+    "static/js/2.b5412abb.chunk.js.LICENSE.txt": "/weatheria/static/js/2.b5412abb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09ba3b28.js",
+    "static/js/2.b5412abb.chunk.js",
+    "static/css/main.a719056c.chunk.css",
+    "static/js/main.efb0c315.chunk.js"
+  ]
+}
