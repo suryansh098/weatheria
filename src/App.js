@@ -1,31 +1,41 @@
 import React, { useState } from 'react';
 
-import { fetchWeather } from './api/FetchWeather';
+import { fetchCurrentWeather, fetchWeatherForcast } from './api/FetchWeather';
 import './App.css';
 
 const App = () => {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
+  const callApiCurrentWeather = async (query) => {
+    const data = await fetchCurrentWeather(query);
+    console.log(data);
+    setWeather(data);
+    setQuery('');
+  }
+
   const search = async (e) => {
     if(e.key === 'Enter') {
-      const data = await fetchWeather(query);
-      console.log(data);
-      setWeather(data);
-      setQuery('');
+      callApiCurrentWeather(query);
     }
   }
 
   return (
     <div className="main-container">
-      <input 
-        type="text" 
-        placeholder="Enter city..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        onKeyPress={search}
-        className="search" 
-      />
+      <div className="input-container">
+        <input 
+          type="text" 
+          placeholder="Enter city..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          onKeyPress={search}
+          className="search" 
+        />
+        <button onClick={(e) => callApiCurrentWeather(query)}>
+          Search
+        </button>
+      </div>
+      
 
       {weather.main && (
         <div className="city">
@@ -36,7 +46,7 @@ const App = () => {
           </h2>
 
           <div className="city-temp">
-            {Math.round(weather.main.temp)}
+            {weather.main.temp.toFixed(1)}
             <sup>&deg;C</sup>
           </div>
 
